@@ -1,0 +1,469 @@
+body {
+    margin: 0;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+.site {
+    margin: 0 auto;
+
+    h2,
+    h3 {
+        text-align: center;
+    }
+
+    .site-part {
+        padding: 40px 16px;
+    }
+
+    .site-part:nth-child(even) {
+        background-color: #f8f9f9;
+    }
+}
+
+header {
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    background-color: yellow;
+    padding: 0 16px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+
+    .logo {
+        height: 100%;
+        display: flex;
+        align-items: center;
+
+        .logo-img {
+            height: 80%;
+            margin-right: 8px;
+        }
+
+        .company-name {
+            font-weight: bold;
+        }
+    }
+
+    .address,
+    .working-hours {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contacts {
+        display: flex;
+        flex-direction: column;
+
+        .phone,
+        .email {
+            display: flex;
+
+            .img-wrapper {
+                width: 32px;
+
+                img {
+                    height: 18px;
+                    width: 18px;
+                }
+            }
+        }
+    }
+
+    .social {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        .contact-form-link {
+            width: 120px;
+            text-align: center;
+            border-radius: 6px;
+            border: solid 1px black;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 8px;
+            color: black;
+            background-color: #ffff5c;
+        }
+
+        .contact-form-link:hover {
+            background-color: #ecec00;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+.visualization {
+    width: 100%;
+    max-height: 600px;
+    overflow: hidden;
+
+    .company-img {
+        width: 100%;
+    }
+}
+
+.company-information {
+    max-width: 1800px;
+    padding: 16px;
+}
+
+.services {
+    max-width: 1600px;
+    margin: 0 auto;
+
+    table {
+        width: 100%;
+
+        td:first-child {
+            width: 100%;
+        }
+
+        td:last-child {
+            min-width: 88px;
+            text-align: center;
+        }
+
+        tr {
+            height: 38px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9f9;
+        }
+    }
+
+    .service-container {
+        border: solid 2px yellow;
+        margin-bottom: 8px;
+        max-width: 1800px;
+
+        .accordion {
+            display: flex;
+            gap: 16px;
+            justify-content: space-between;
+            background-color: #eee;
+            align-items: center;
+            color: #444;
+            cursor: pointer;
+            padding: 16px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+
+            .service {
+                display: flex;
+                flex-direction: column;
+                flex: 1 0 0;
+
+                .service-name {
+                    display: flex;
+                    flex-direction: column;
+                    flex: 1 0 0;
+                    font-weight: 800;
+                }
+            }
+
+            .arrow img {
+                height: 24px;
+                opacity: 0.4;
+            }
+        }
+    }
+
+    .active,
+    .accordion:hover {
+        background-color: #ccc;
+    }
+
+    .panel {
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+    }
+
+    .package-description {
+        padding: 0 16px;
+    }
+}
+
+.employees {
+    .slide {
+        display: none
+    }
+
+    img {
+        vertical-align: middle;
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Caption text */
+    .text {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 90%;
+        text-align: center;
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
+
+    .active,
+    .dot:hover {
+        background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+        from {
+            opacity: .4
+        }
+
+        to {
+            opacity: 1
+        }
+    }
+
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+
+        .prev,
+        .next,
+        .text {
+            font-size: 11px
+        }
+    }
+}
+
+.certificates-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contact {
+    .contact-container {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+
+        .contact-form,
+        .working-hours-locations-contacts {
+            padding-bottom: 24px;
+            flex: 0 1 540px;
+
+            .input-field {
+                margin-bottom: 8px;
+                text-transform: uppercase;
+                color: gray;
+
+                input,
+                textarea {
+                    width: 100%;
+                    border: solid 2px #feea11;
+                    border-radius: 6px;
+                }
+
+                input {
+                    height: 46px;
+                    font-size: 1.2rem;
+                    box-sizing: border-box;
+                }
+
+                textarea {
+                    height: 200px;
+                    box-sizing: border-box;
+                }
+            }
+
+            input[type="submit"] {
+                height: 46px;
+                width: 100%;
+                border-radius: 6px;
+                border: solid 2px yellow;
+                background-color: #ffff5c;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+
+            input[type="submit"]:hover {
+                background-color: #ecec00;
+            }
+
+            .contact-form-description {
+                padding-top: 16px;
+            }
+
+            .working-hours {
+                padding-bottom: 24px;
+            }
+
+            .contacts-container {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+
+                .location,
+                .phone-item,
+                .email-item {
+                    display: flex;
+                    gap: 16px;
+                }
+
+                img {
+                    height: 24px;
+                    width: 24px;
+                }
+            }
+        }
+
+        .working-hours-locations-contacts {
+            padding-right: 8px;
+        }
+    }
+}
+
+footer {
+    display: flex;
+    height: 75px;
+    background: #222222;
+    font-weight: 500;
+    color: #bbbbbb;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-social-links {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    padding-top: 8px;
+}
+
+.social-links a img {
+    width: 24px;
+    height: 24px;
+}
+
+.floating-phone {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background: #2db700;
+    padding: 8px;
+    opacity: 0.8;
+    border-radius: 50%;
+
+    img {
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+
+    header .company-name,
+    header .contacts {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 765px) {
+
+    header .address,
+    header .working-hours {
+        display: none;
+    }
+
+    .site .site-part {
+        padding: 16px;
+    }
+
+    #contacts .contact-container {
+        flex-direction: column;
+        gap: 0;
+
+        .contact-form,
+        .working-hours-locations-contacts {
+            padding-bottom: 0;
+            flex: 0;
+        }
+    }
+
+    .floating-phone {
+        display: block;
+    }
+}
