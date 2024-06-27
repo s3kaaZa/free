@@ -1,6 +1,7 @@
 body {
     margin: 0;
     font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 16px;
 }
 
 .site {
@@ -31,6 +32,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 2;
+    font-weight: 400;
 
     .logo {
         height: 100%;
@@ -44,6 +46,7 @@ header {
 
         .company-name {
             font-weight: bold;
+            font-size: 1.4em;
         }
     }
 
@@ -51,6 +54,10 @@ header {
     .working-hours {
         display: flex;
         flex-direction: column;
+
+        .working-hours-title {
+            font-weight: 700;
+        }
     }
 
     .contacts {
@@ -122,18 +129,24 @@ header {
 
     table {
         width: 100%;
-
-        td:first-child {
-            width: 100%;
-        }
-
-        td:last-child {
-            min-width: 88px;
-            text-align: center;
-        }
+        border-collapse: collapse;
 
         tr {
             height: 38px;
+        }
+
+        td {
+            border-bottom: solid 1px gray;
+        }
+
+        td:first-child {
+            width: 100%;
+            padding: 0 8px;
+        }
+
+        td:last-child {
+            min-width: 128px;
+            text-align: center;
         }
 
         tr:nth-child(even) {
@@ -159,7 +172,6 @@ header {
             border: none;
             text-align: left;
             outline: none;
-            font-size: 15px;
             transition: 0.4s;
 
             .service {
@@ -180,6 +192,11 @@ header {
                 opacity: 0.4;
             }
         }
+    }
+
+    .additional-cost {
+        font-weight: bold;
+        text-align: center;
     }
 
     .active,
@@ -308,12 +325,6 @@ header {
     }
 }
 
-.certificates-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
 .contact {
     .contact-container {
         display: flex;
@@ -433,7 +444,7 @@ footer {
     }
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (width <=1280px) {
 
     header .company-name,
     header .contacts {
@@ -441,7 +452,10 @@ footer {
     }
 }
 
-@media screen and (max-width: 765px) {
+@media screen and (width <=765px) {
+    body {
+        font-size: 14px;
+    }
 
     header .address,
     header .working-hours {
