@@ -187,6 +187,19 @@ header {
                 }
             }
 
+            .arrow {
+                font-size: 24px;
+                background: inherit;
+            }
+
+            .arrow::before {
+                content: "\2193";
+            }
+
+            .arrow.active::before {
+                content: "\2191";
+            }
+
             .arrow img {
                 height: 24px;
                 opacity: 0.4;
