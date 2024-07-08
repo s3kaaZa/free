@@ -1,6 +1,14 @@
+:root {
+    --maincolor: #feea11;
+    --button-color: #dcfda4;
+    --hover-button-color: #bdfc53;
+
+    --context-max-width: 1600px;
+}
+
 body {
     margin: 0;
-    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-family: "Tahoma", sans-serif;
     font-size: 16px;
 }
 
@@ -27,7 +35,7 @@ header {
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-    background-color: yellow;
+    background-color: var(--maincolor);
     padding: 0 16px;
     position: sticky;
     top: 0;
@@ -94,11 +102,11 @@ header {
             text-decoration: none;
             padding: 8px;
             color: black;
-            background-color: #ffff5c;
+            background-color: var(--button-color);
         }
 
         .contact-form-link:hover {
-            background-color: #ecec00;
+            background-color: var(--hover-button-color);
         }
 
         .social-links {
@@ -110,21 +118,36 @@ header {
 
 .visualization {
     width: 100%;
-    max-height: 600px;
+    max-height: 800px;
     overflow: hidden;
+    margin: 0;
+    position: relative;
 
     .company-img {
         width: 100%;
     }
+
+    .slogan {
+        position: absolute;
+        top: 50%;
+        text-align: center;
+        width: 100%;
+        font-size: 2em;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
 }
 
 .company-information {
-    max-width: 1800px;
+    max-width: var(--context-max-width);
+    margin: 0 auto;
     padding: 16px;
+    text-align: justify;
 }
 
 .services {
-    max-width: 1600px;
+    max-width: var(--context-max-width);
     margin: 0 auto;
 
     table {
@@ -155,9 +178,9 @@ header {
     }
 
     .service-container {
-        border: solid 2px yellow;
+        border: solid 2px var(--maincolor);
         margin-bottom: 8px;
-        max-width: 1800px;
+        max-width: var(--context-max-width);
 
         .accordion {
             display: flex;
@@ -173,6 +196,7 @@ header {
             text-align: left;
             outline: none;
             transition: 0.4s;
+            font-size: 15px;
 
             .service {
                 display: flex;
@@ -226,6 +250,10 @@ header {
     .package-description {
         padding: 0 16px;
     }
+
+    .factors-text {
+        text-align: justify;
+    }
 }
 
 .employees {
@@ -253,7 +281,7 @@ header {
         width: auto;
         padding: 16px;
         margin-top: -22px;
-        color: white;
+        color: black;
         font-weight: bold;
         font-size: 18px;
         transition: 0.6s ease;
@@ -273,22 +301,22 @@ header {
         background-color: rgba(0, 0, 0, 0.8);
     }
 
-    /* Caption text */
-    .text {
-        color: #f2f2f2;
-        font-size: 15px;
-        padding: 8px 12px;
-        position: absolute;
-        bottom: 8px;
-        width: 90%;
-        text-align: center;
+    .employee {
+        display: flex;
+        padding: 40px;
+        border: 1px black solid;
+
+        .employee-photo {
+            width: 240px;
+        }
     }
+
+    /* Caption text */
 
     /* Number text (1/3 etc) */
     .numbertext {
-        color: #f2f2f2;
         font-size: 12px;
-        padding: 8px 12px;
+        padding: 8px 56px;
         position: absolute;
         top: 0;
     }
@@ -376,18 +404,19 @@ header {
                 height: 46px;
                 width: 100%;
                 border-radius: 6px;
-                border: solid 2px yellow;
-                background-color: #ffff5c;
+                border: solid 2px var(--maincolor);
+                background-color: var(--button-color);
                 font-weight: 600;
                 text-transform: uppercase;
             }
 
             input[type="submit"]:hover {
-                background-color: #ecec00;
+                background-color: var(--hover-button-color);
             }
 
             .contact-form-description {
                 padding-top: 16px;
+                text-align: justify;
             }
 
             .working-hours {
@@ -476,6 +505,23 @@ footer {
 
     .site .site-part {
         padding: 16px;
+    }
+
+    .visualization .slogan {
+        top: 30%;
+        font-size: 1.5em;
+    }
+
+    .employees {
+        & .employee {
+            .employee-photo {
+                display: none;
+            }
+
+            .employee-description {
+                min-height: 240px;
+            }
+        }
     }
 
     #contacts .contact-container {
