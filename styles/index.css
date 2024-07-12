@@ -1,12 +1,14 @@
 :root {
     --main-style-color: #feea11;
+    --main-style-color-hover: #e4d101;
     --main-background-color: #f8f9f9;
-    --button-color: #dcfda4;
-    --hover-button-color: #bdfc53;
-    --table-border-color: #bdfc53;
+    --button-color: #fff;
+    --hover-button-color: #ddd;
+    --table-border-color: #ccc;
     --accordion-text-color: #444;
     --accordion-background-color: #eee;
-    --accordion-hover-background-color: #ccc;
+    --accordion-border-color: #ffff00;
+    --accordion-active-background-color: #e6e6e6;
     --slider-dot-background-color: #bbb;
     --slider-dot-hover-background-color: #717171;
     --input-field-text-color: #808080;
@@ -79,6 +81,10 @@ header {
         }
     }
 
+    .address {
+        display: none;
+    }
+
     .contacts {
         display: flex;
         flex-direction: column;
@@ -104,14 +110,13 @@ header {
         gap: 16px;
 
         .contact-form-link {
-            width: 120px;
             text-align: center;
             border-radius: 6px;
             border: solid 1px #000;
             font-weight: 600;
             text-transform: uppercase;
             text-decoration: none;
-            padding: 8px;
+            padding: 16px;
             color: #000;
             background-color: var(--button-color);
         }
@@ -146,7 +151,11 @@ header {
         font-size: 2em;
         display: flex;
         flex-direction: column;
-        gap: 24px;
+        gap: 8px;
+
+        h1 {
+            margin: 16px;
+        }
     }
 }
 
@@ -190,24 +199,34 @@ header {
 
     .service-container {
         border: solid 2px var(--main-style-color);
+        border-radius: 10px;
         margin-bottom: 8px;
         max-width: var(--context-max-width);
+
+        &.active {
+            border-radius: 10px 10px 0 0;
+        }
 
         .accordion {
             display: flex;
             gap: 16px;
             justify-content: space-between;
-            background-color: var(--accordion-background-color);
+            background-color: var(--main-style-color);
             align-items: center;
             color: var(--accordion-text-color);
             cursor: pointer;
             padding: 16px;
             width: 100%;
-            border: none;
+            border-radius: 10px;
+            border: 2px solid var(--accordion-border-color);
             text-align: left;
             outline: none;
             transition: 0.4s;
             font-size: 15px;
+
+            &:hover {
+                background-color: var(--main-style-color-hover);
+            }
 
             .service {
                 display: flex;
@@ -246,9 +265,8 @@ header {
         text-align: center;
     }
 
-    .active,
-    .accordion:hover {
-        background-color: var(--accordion-hover-background-color);
+    .active {
+        background-color: var(--accordion-active-background-color);
     }
 
     .panel {
@@ -386,17 +404,17 @@ header {
                     width: 100%;
                     border: solid 2px var(--main-style-color);
                     border-radius: 6px;
-                }
-
-                input {
-                    height: 46px;
+                    padding: 16px;
                     font-size: 1.2rem;
                     box-sizing: border-box;
                 }
 
+                input {
+                    height: 46px;
+                }
+
                 textarea {
                     height: 200px;
-                    box-sizing: border-box;
                 }
             }
 
@@ -487,8 +505,7 @@ footer {
 
 @media screen and (width <=1280px) {
 
-    header .company-name,
-    header .contacts {
+    header .company-name {
         display: none;
     }
 }
@@ -498,6 +515,7 @@ footer {
         font-size: 14px;
     }
 
+    header .contacts,
     header .address,
     header .working-hours {
         display: none;
