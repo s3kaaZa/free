@@ -197,82 +197,89 @@ header {
         }
     }
 
-    .service-container {
-        border: solid 2px var(--main-style-color);
-        border-radius: 10px;
-        margin-bottom: 8px;
+    .accordion__item {
+        width: 100%;
         max-width: var(--context-max-width);
+        margin-bottom: 8px;
+        text-align: left;
+        border: 2px solid var(--accordion-border-color);
+        border-radius: 10px;
+        transition: 0.4s;
+        font-size: 15px;
 
-        &.active {
+        &.accordion__item_show {
             border-radius: 10px 10px 0 0;
         }
+    }
 
-        .accordion {
+    .accordion__header {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 16px;
+        min-height: 24px;
+        background-color: var(--main-style-color);
+        color: var(--accordion-text-color);
+        border: 2px solid var(--accordion-border-color);
+        border-radius: 10px;
+
+        .service {
             display: flex;
-            gap: 16px;
-            justify-content: space-between;
-            background-color: var(--main-style-color);
-            align-items: center;
-            color: var(--accordion-text-color);
-            cursor: pointer;
-            padding: 16px;
-            width: 100%;
-            border-radius: 10px;
-            border: 2px solid var(--accordion-border-color);
-            text-align: left;
-            outline: none;
-            transition: 0.4s;
-            font-size: 15px;
-
-            &:hover {
-                background-color: var(--main-style-color-hover);
-            }
-
-            .service {
-                display: flex;
-                flex-direction: column;
-                flex: 1 0 0;
-
-                .service-name {
-                    display: flex;
-                    flex-direction: column;
-                    flex: 1 0 0;
-                    font-weight: 800;
-                }
-            }
-
-            .arrow {
-                font-size: 24px;
-                background: inherit;
-            }
-
-            .arrow::before {
-                content: "\2193";
-            }
-
-            .arrow.active::before {
-                content: "\2191";
-            }
-
-            .arrow img {
-                height: 24px;
-                opacity: 0.4;
-            }
+            flex-direction: column;
+            flex: 1;
         }
+
+        .service-name {
+            flex: 1;
+            font-weight: 800;
+        }
+    }
+
+    .accordion__header::after {
+        flex-shrink: 0;
+        width: 1.25rem;
+        height: 1.25rem;
+        margin-left: auto;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-size: 1.25rem;
+        content: "";
+        transition: transform 0.2s ease-out;
+    }
+
+    .accordion__item_show .accordion__header {
+        border-radius: 10px 10px 0 0;
+    }
+
+    .accordion__item_show .accordion__header::after,
+    .accordion__item_slidedown .accordion__header::after {
+        transform: rotate(-180deg);
+    }
+
+    .accordion__header:hover {
+        background-color: var(--main-style-color-hover);
+    }
+
+    .accordion__item:not(.accordion__item_show) .accordion__header {
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
+    .accordion__content {
+        border-bottom-right-radius: 0.25rem;
+        border-bottom-left-radius: 0.25rem;
+
+        &.package-description {
+            padding: 8px;
+        }
+    }
+
+    .accordion__item:not(.accordion__item_show) .accordion__body {
+        display: none;
     }
 
     .additional-cost {
         text-align: center;
-    }
-
-    .active {
-        background-color: var(--accordion-active-background-color);
-    }
-
-    .panel {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.2s ease-out;
     }
 
     .package-description {
