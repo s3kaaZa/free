@@ -286,7 +286,7 @@ header {
 
 .employees {
     .slide {
-        display: none;
+        display: none
     }
 
     img {
@@ -365,19 +365,20 @@ header {
 
     @keyframes fade {
         from {
-            opacity: 0.4;
+            opacity: .4
         }
 
         to {
-            opacity: 1;
+            opacity: 1
         }
     }
 
     @media only screen and (max-width: 300px) {
+
         .prev,
         .next,
         .text {
-            font-size: 11px;
+            font-size: 11px
         }
     }
 }
@@ -511,6 +512,7 @@ footer {
 }
 
 @media screen and (width <=1280px) {
+
     header .company-name {
         display: none;
     }
@@ -538,9 +540,6 @@ footer {
 
     .employees {
         & .employee {
-            min-height: 290px;
-            padding: 24px;
-
             .employee-photo {
                 display: none;
             }
