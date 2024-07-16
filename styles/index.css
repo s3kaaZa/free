@@ -500,12 +500,12 @@ footer {
     width: 40px;
 
     a {
-        height: inherit;
-        width: inherit;
+        height: 40px;
+        width: 40px;
 
         img {
-            height: inherit;
-            width: inherit;
+            height: 40px;
+            width: 40px;
         }
     }
 }
