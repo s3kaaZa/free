@@ -427,11 +427,16 @@ header {
             input[type="submit"] {
                 height: 46px;
                 width: 100%;
+                text-align: center;
                 border-radius: 6px;
-                border: solid 2px var(--main-style-color);
-                background-color: var(--button-color);
+                border: solid 1px #000;
                 font-weight: 600;
                 text-transform: uppercase;
+                text-decoration: none;
+                padding: 16px;
+                color: #000;
+                background-color: var(--button-color);
+                border: solid 2px var(--main-style-color);
             }
 
             input[type="submit"]:hover {
