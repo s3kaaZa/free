@@ -218,7 +218,7 @@ header {
         gap: 16px;
         padding: 16px;
         min-height: 24px;
-        background-color: var(--main-style-color);
+        /* background-color: var(--main-style-color); */
         color: var(--accordion-text-color);
         border: 2px solid var(--accordion-border-color);
         border-radius: 10px;
@@ -240,7 +240,7 @@ header {
         width: 1.25rem;
         height: 1.25rem;
         margin-left: auto;
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23444444'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
         background-repeat: no-repeat;
         background-size: 1.25rem;
         content: "";
@@ -249,6 +249,8 @@ header {
 
     .accordion__item_show .accordion__header {
         border-radius: 10px 10px 0 0;
+        border-left-width: 0;
+        border-right-width: 0;
     }
 
     .accordion__item_show .accordion__header::after,
@@ -257,7 +259,7 @@ header {
     }
 
     .accordion__header:hover {
-        background-color: var(--main-style-color-hover);
+        background-color: var(--accordion-active-background-color);
     }
 
     .accordion__item:not(.accordion__item_show) .accordion__header {
@@ -429,14 +431,14 @@ header {
                 width: 100%;
                 text-align: center;
                 border-radius: 6px;
-                border: solid 1px #000;
+                /* border: solid 1px #000; */
+                border: solid 2px var(--main-style-color);
                 font-weight: 600;
                 text-transform: uppercase;
                 text-decoration: none;
                 padding: 16px;
                 color: #000;
                 background-color: var(--button-color);
-                border: solid 2px var(--main-style-color);
             }
 
             input[type="submit"]:hover {
