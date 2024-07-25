@@ -28,6 +28,16 @@ body {
 .site {
     margin: 0 auto;
 
+    header {
+        height: 75px;
+        display: flex;
+        justify-content: center;
+        background-color: var(--main-style-color);
+        position: sticky;
+        top: 0;
+        z-index: 2;
+    }
+
     h2,
     h3 {
         text-align: center;
@@ -35,6 +45,7 @@ body {
 
     .site-part {
         padding: 40px 16px;
+        scroll-margin-top: 20px;
     }
 
     .site-part:nth-child(even) {
@@ -42,17 +53,13 @@ body {
     }
 }
 
-header {
-    height: 75px;
+.header-container {
+    height: inherit;
+    width: var(--context-max-width);
     display: flex;
-    align-items: center;
     justify-content: space-between;
     gap: 16px;
-    background-color: var(--main-style-color);
     padding: 0 16px;
-    position: sticky;
-    top: 0;
-    z-index: 2;
     font-weight: 400;
 
     .logo {
@@ -68,6 +75,22 @@ header {
         .company-name {
             font-weight: bold;
             font-size: 1.4em;
+        }
+    }
+
+    .nav-links {
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: bold;
+        max-width: 600px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        a {
+            text-decoration: none;
+            color: #000;
         }
     }
 
@@ -116,7 +139,7 @@ header {
             font-weight: 600;
             text-transform: uppercase;
             text-decoration: none;
-            padding: 16px;
+            padding: 8px;
             color: #000;
             background-color: var(--button-color);
         }
@@ -134,7 +157,7 @@ header {
 
 .visualization {
     width: 100%;
-    max-height: 800px;
+    max-height: 500px;
     overflow: hidden;
     margin: 0;
     position: relative;
@@ -145,7 +168,7 @@ header {
 
     .slogan {
         position: absolute;
-        top: 50%;
+        top: 35%;
         text-align: center;
         width: 100%;
         font-size: 2em;
@@ -428,18 +451,17 @@ header {
                 width: 100%;
                 text-align: center;
                 border-radius: 6px;
-                /* border: solid 1px #000; */
                 border: solid 2px var(--main-style-color);
                 font-weight: 600;
                 text-transform: uppercase;
                 text-decoration: none;
                 padding: 16px;
                 color: #000;
-                background-color: var(--button-color);
+                background-color: var(--main-style-color);
             }
 
             input[type="submit"]:hover {
-                background-color: var(--hover-button-color);
+                background-color: var(--main-style-color-hover);
             }
 
             .contact-form-description {
@@ -516,20 +538,24 @@ footer {
     }
 }
 
-@media screen and (width <=1280px) {
-    header .company-name {
-        display: none;
+@media screen and (width < 1280px) {
+    .header-container {
+        .company-name {
+            display: none;
+        }
+
+        .nav-links {
+            max-width: 400px;
+        }
     }
 }
 
-@media screen and (width <=765px) {
+@media screen and (width < 765px) {
     body {
         font-size: 14px;
     }
 
-    header .contacts,
-    header .address,
-    header .working-hours {
+    .header-container .nav-links {
         display: none;
     }
 
