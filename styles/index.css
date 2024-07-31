@@ -73,8 +73,10 @@ body {
         }
 
         .company-name {
+            position: absolute;
+            -webkit-text-stroke: 1px white;
+            font-size: 1.6em;
             font-weight: bold;
-            font-size: 1.4em;
         }
     }
 
@@ -157,7 +159,7 @@ body {
 
 .visualization {
     width: 100%;
-    max-height: 500px;
+    max-height: 300px;
     overflow: hidden;
     margin: 0;
     position: relative;
@@ -168,7 +170,7 @@ body {
 
     .slogan {
         position: absolute;
-        top: 35%;
+        top: 16%;
         text-align: center;
         width: 100%;
         font-size: 2em;
@@ -178,6 +180,23 @@ body {
 
         h1 {
             margin: 16px;
+            font-family: fantasy;
+            font-size: 2.5em;
+            letter-spacing: 0.2em;
+            text-shadow: 8px 8px 0px var(--footer-background-color);
+
+            .buhgalter {
+                color: #fff;
+            }
+
+            .tut {
+                color: var(--main-style-color);
+            }
+        }
+
+        .subslogan {
+            font: italic bold 2rem "Fira Sans", serif;
+            text-shadow: 8px 8px 0px var(--main-style-color);
         }
     }
 }
@@ -356,11 +375,17 @@ body {
 
     .employee {
         display: flex;
+        min-height: 200px;
         padding: 40px;
         border: 1px #000 solid;
 
         .employee-photo {
+            display: none;
             width: 240px;
+        }
+
+        .employee-description {
+            width: 100%;
         }
     }
 
@@ -563,9 +588,25 @@ footer {
         padding: 16px;
     }
 
-    .visualization .slogan {
-        top: 30%;
-        font-size: 1.5em;
+    .visualization {
+        .company-img {
+            max-height: 200px;
+        }
+
+        .slogan {
+            top: 10%;
+            font-size: 1.5em;
+
+            h1 {
+                font-size: 1.5em;
+                text-shadow: 6px 6px 0px var(--footer-background-color);
+            }
+
+            .subslogan {
+                font-size: 1em;
+                text-shadow: 2px 2px 4px var(--main-style-color);
+            }
+        }
     }
 
     .employees {
