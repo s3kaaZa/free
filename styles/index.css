@@ -187,14 +187,14 @@ body {
             .buhgalter {
                 color: #fff;
                 -webkit-text-stroke: 1px #000;
-                text-shadow: 8px 8px 0px #000;
+                text-shadow: 0 10px 0 #000;
             }
 
             .tut {
                 color: var(--main-style-color);
                 font-size: 0.8em;
                 -webkit-text-stroke: 1px #000;
-                text-shadow: 6px 6px 0px #6f0000;
+                text-shadow: 6px 6px 2px #6f0000;
             }
         }
 
