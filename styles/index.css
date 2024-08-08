@@ -179,7 +179,7 @@ body {
         gap: 8px;
 
         h1 {
-            margin: 16px;   
+            margin: 16px;
             font-family: fantasy;
             font-size: 2.5em;
             letter-spacing: 0.2em;
@@ -204,7 +204,7 @@ body {
 
         .subslogan {
             font: italic bold 2rem "Fira Sans", serif;
-            text-shadow: 8px 8px 0px var(--main-style-color);
+            text-shadow: 2px 2px 2px var(--main-style-color);
         }
     }
 }
@@ -582,8 +582,14 @@ footer {
         }
     }
 
-    .visualization .slogan h1 .logo-domen {
-        height: 60px;
+    .visualization .slogan h1 {
+        .sub-slogan {
+            font-size: 1.5em;
+        }
+
+        .logo-domen {
+            height: 60px;
+        }
     }
 }
 
@@ -619,7 +625,7 @@ footer {
             }
 
             .subslogan {
-                font-size: .9em;
+                font-size: 0.9em;
                 text-shadow: 2px 2px 4px var(--main-style-color);
             }
         }
