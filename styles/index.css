@@ -204,7 +204,6 @@ body {
 
         .subslogan {
             font: italic bold 2rem "Fira Sans", serif;
-            text-shadow: 2px 2px 2px var(--main-style-color);
         }
     }
 }
