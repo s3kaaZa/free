@@ -6,8 +6,8 @@
     --hover-button-color: #ddd;
     --table-border-color: #ccc;
     --accordion-text-color: #444;
-    --accordion-background-color: #eee;
     --accordion-border-color: #ffff00;
+    --accordion-background-color: #fbfbfb;
     --accordion-active-background-color: #e6e6e6;
     --slider-dot-background-color: #bbb;
     --slider-dot-hover-background-color: #717171;
@@ -268,6 +268,7 @@ body {
         padding: 16px;
         min-height: 24px;
         color: var(--accordion-text-color);
+        background-color: var(--accordion-background-color);
 
         .service {
             display: flex;
@@ -616,7 +617,6 @@ footer {
 
             h1 {
                 font-size: 1.5em;
-                text-shadow: 6px 6px 0px var(--footer-background-color);
 
                 .logo-domen {
                     height: 48px;
@@ -625,7 +625,6 @@ footer {
 
             .subslogan {
                 font-size: 0.9em;
-                text-shadow: 2px 2px 4px var(--main-style-color);
             }
         }
     }
