@@ -2,11 +2,12 @@
     --main-style-color: #feea11;
     --main-style-color-hover: #e4d101;
     --main-background-color: #f8f9f9;
-    --button-color: #fff;
-    --hover-button-color: #ddd;
+    --header-background-color: #f3f2ef;
+    --button-color: #ffde59;
+    --hover-button-color: #e4d101;
     --table-border-color: #ccc;
     --accordion-text-color: #444;
-    --accordion-border-color: #ffff00;
+    --accordion-border-color: #000;
     --accordion-background-color: #fbfbfb;
     --accordion-active-background-color: #e6e6e6;
     --slider-dot-background-color: #bbb;
@@ -32,7 +33,7 @@ body {
         height: 75px;
         display: flex;
         justify-content: center;
-        background-color: var(--main-style-color);
+        background-color: var(--header-background-color);
         position: sticky;
         top: 0;
         z-index: 2;
@@ -310,8 +311,7 @@ body {
     }
 
     .accordion__item:not(.accordion__item_show) .accordion__header {
-        border-bottom-right-radius: 10px;
-        border-bottom-left-radius: 10px;
+        border-radius: 10px;
     }
 
     .accordion__content {
@@ -490,11 +490,11 @@ body {
                 text-decoration: none;
                 padding: 16px;
                 color: #000;
-                background-color: var(--main-style-color);
+                background-color: var(--button-color);
             }
 
             input[type="submit"]:hover {
-                background-color: var(--main-style-color-hover);
+                background-color: var(--hover-button-color);
             }
 
             .contact-form-description {
