@@ -1,3 +1,4 @@
+const employee = ['director', 'vice-director'];
 let slideIndex = 1;
 let slideshowContainer = document.querySelector(".slideshow-container");
 let slides = slideshowContainer.getElementsByClassName("slide");
@@ -30,7 +31,6 @@ function handleTouchMove(evt) {
       /* right swipe */
       slideIndex--;
     }
-    console.log(slideIndex);
   }
 
   showSlides(slideIndex);

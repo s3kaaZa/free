@@ -386,6 +386,16 @@ body {
         min-height: 200px;
         padding: 40px;
         border: 1px #000 solid;
+        background-position: center;
+        background-size: cover;
+
+        &.director {
+            background-image: url("../img/director.jpg");
+        }
+
+        &.vice-director {
+            background-image: url("../img/vice-director.jpg");
+        }
 
         .employee-photo {
             display: none;
