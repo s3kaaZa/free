@@ -383,7 +383,7 @@ body {
 
     .employee {
         display: flex;
-        min-height: 200px;
+        min-height: 300px;
         padding: 40px;
         border: 1px #000 solid;
         background-position: center;
